@@ -12,7 +12,8 @@ public class Employee {
     private Long id;
     private String name;
 
-    @OneToMany(mappedBy = "employee")
+
+    @OneToMany(mappedBy = "employee", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JsonManagedReference
     private List<Address> addresses;
 

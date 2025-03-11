@@ -1,6 +1,7 @@
 package com.app.interview.controller;
 
 
+import com.app.interview.dto.EmployeeAddressDTO;
 import com.app.interview.entity.Employee;
 import com.app.interview.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,7 +16,6 @@ public class EmployeeController {
 
     public EmployeeController(EmployeeService employeeService) {
         this.employeeService = employeeService;
-        employeeService.initDB();
     }
 
     @GetMapping("/hi")
@@ -24,7 +24,7 @@ public class EmployeeController {
     }
 
     @GetMapping("/employees")
-    public List<Employee> getEmployeesWithMaxPriorityAddress() {
+    public List<EmployeeAddressDTO> getEmployeesWithMaxPriorityAddress() {
         return employeeService.getEmployeesWithMaxPriorityAddress();
     }
 

@@ -1,5 +1,6 @@
 package com.app.interview.service;
 
+import com.app.interview.dto.EmployeeAddressDTO;
 import com.app.interview.entity.Address;
 import com.app.interview.entity.Employee;
 import com.app.interview.repo.EmployeeRepo;
@@ -16,10 +17,9 @@ public class EmployeeService {
 
     public EmployeeService(EmployeeRepo employeeRepository) {
         this.employeeRepository = employeeRepository;
-        initDB();
     }
 
-    public List<Employee> getEmployeesWithMaxPriorityAddress() {
+    public List<EmployeeAddressDTO> getEmployeesWithMaxPriorityAddress() {
         return employeeRepository.findAllWithMaxPriorityAddress();
     }
 
